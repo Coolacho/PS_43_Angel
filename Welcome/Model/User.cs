@@ -21,6 +21,11 @@ namespace Welcome.Model
 
         public double Grade { get; set; }
 
+        public User()
+        {
+
+        }
+
         public User (string name, string password, UserRolesEnum role, string email, string telephone, string fac_num, double grade)
         {
             Name = name;
