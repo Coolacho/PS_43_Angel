@@ -60,5 +60,27 @@ namespace WelcomeExtended.Loggers
             Console.ResetColor();
             _logMessages[eventId.Id] = message;
         }
+
+        public void GetAllLogs()
+        {
+            foreach (var log in _logMessages.Values)
+            {
+                Console.WriteLine(log);
+            }
+        }
+
+        public void GetLogByEventId(EventId eventId)
+        {
+            if (_logMessages.TryGetValue(eventId.Id, out var log))
+                Console.WriteLine($"{eventId.Id}: {log}");
+            else
+                Console.WriteLine("Log doesn't exist!");
+        }
+
+        public bool RemoveLogByEventId(EventId eventId)
+        {
+            return _logMessages.TryRemove(eventId.Id, out _);
+        }
+
     }
 }
