@@ -51,11 +51,8 @@ namespace WelcomeExtended.Loggers
                     break;
             }
             Console.WriteLine("- LOGGER -");
-            var messageToBeLogged = new StringBuilder();
-            messageToBeLogged.Append($"[{logLevel}]");
-            messageToBeLogged.AppendFormat("[{0}]", _name);
-            Console.WriteLine(messageToBeLogged);
-            Console.WriteLine($"{formatter(state, exception)}");
+            Console.WriteLine($"[{logLevel}][{_name}]");
+            Console.WriteLine($"{message}");
             Console.WriteLine("- LOGGER -");
             Console.ResetColor();
             _logMessages[eventId.Id] = message;
