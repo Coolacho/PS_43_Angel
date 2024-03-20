@@ -67,14 +67,16 @@ namespace WelcomeExtended.Data
             return null;
         }
 
-        public void SetActive(string name, DateOnly date)
+        public void SetActive(string name, string password, DateTime date)
         {
-
+            var user = GetUser(name, password);
+            user.Expires = date;
         }
 
-        public void AssignUserRole(string name, UserRolesEnum userRole)
+        public void AssignUserRole(string name, string password, UserRolesEnum userRole)
         {
-            
+            var user = GetUser(name, password);
+            user.Role = userRole;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Welcome.Model
 {
     public class User
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
         public UserRolesEnum Role { get; set; }
@@ -22,15 +22,18 @@ namespace Welcome.Model
 
         public double Grade { get; set; }
 
+        public DateTime Expires { get; set; }
+
         public User()
         {
 
         }
 
-        public User (string name, string password, UserRolesEnum role, string email, string telephone, string fac_num, double grade)
+        public User (string name, string password, DateTime expireDate, UserRolesEnum role, string email, string telephone, string fac_num, double grade)
         {
             Name = name;
             Password = password;
+            Expires = expireDate;
             Role = role;
             Email = email;
             Telephone = telephone;

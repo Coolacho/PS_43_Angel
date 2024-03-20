@@ -9,7 +9,7 @@ namespace Welcome
     {
         static void Main(string[] args)
         {
-            User user1 = new("Gazpacho", "1234", UserRolesEnum.ADMIN, "gazpacho@tu-sofia", "0888555333", "", 0.0);
+            /*User user1 = new("Gazpacho", "1234", UserRolesEnum.ADMIN, "gazpacho@tu-sofia", "0888555333", "", 0.0);
             UserViewModel viewModel1 = new(user1);
             UserView view1 = new(viewModel1);
             UserViewContacts view_contacts1 = new(viewModel1);
@@ -25,7 +25,7 @@ namespace Welcome
             UserViewGrade view_grade2 = new(viewModel2);
             view2.Display();
             view_contacts2.Display();
-            view_grade2.Display();
+            view_grade2.Display();*/
         }
     }
 }
