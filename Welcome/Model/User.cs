@@ -40,5 +40,17 @@ namespace Welcome.Model
             Fac_num = fac_num;
             Grade = grade;
         }
+
+        public override string ToString()
+        {
+            return $"Name: {Name}\n" +
+                $"Password: {Password}\n" +
+                $"Expires: {Expires}\n" +
+                $"Role: {Role}\n" +
+                $"Email: {Email}\n" +
+                $"Telephone: {Telephone}\n" +
+                $"Fac num: {Fac_num}\n" +
+                $"Grade: {Grade}\n";
+        }
     }
 }

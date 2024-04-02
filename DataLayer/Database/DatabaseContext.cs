@@ -15,10 +15,8 @@ namespace DataLayer.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string solutionFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string databaseFile = "Welcome.db";
-            string databasePath = Path.Combine(solutionFolder, databaseFile);
-            optionsBuilder.UseSqlite($"Data Source={databasePath}");
+            optionsBuilder.UseSqlite($"Data Source={databaseFile}");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
