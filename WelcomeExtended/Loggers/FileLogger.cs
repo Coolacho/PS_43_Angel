@@ -8,11 +8,14 @@ namespace WelcomeExtended.Loggers
 
         private readonly ConcurrentDictionary<int, string> _logMessages;
         private readonly string _name;
+        private readonly string _filePath;
 
-        public FileLogger(string name)
+        public FileLogger(string name, string filePath)
         {
             _name = name;
             _logMessages = new ConcurrentDictionary<int, string>();
+            _filePath = filePath;
+
         }
 
         public IDisposable? BeginScope<TState>(TState state) where TState : notnull
@@ -30,7 +33,7 @@ namespace WelcomeExtended.Loggers
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
         {
             var message = formatter(state, exception);
-            using (StreamWriter w = File.AppendText("log.txt"))
+            using (StreamWriter w = File.AppendText(_filePath))
             {
                 w.Write("\r\nLog Entry : ");
                 w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WelcomeExtended.Loggers
 {
-    public class LoggerProvider : ILoggerProvider
+    public class HashLoggerProvider : ILoggerProvider
     {
         public ILogger CreateLogger(string categoryName)
         {
